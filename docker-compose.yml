@@ -87,3 +87,19 @@ services :
       config-service:
         condition: service_healthy
     restart: unless-stopped
+
+  frontendangular-service:
+    build: ./angular-front-end
+    container_name: frontendangular-service
+    ports:
+      - '80:80'
+    expose:
+      - '80'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:80" ]
+      interval: 10s
+      retries: 3
+    depends_on:
+      account-service:
+        condition: service_healthy
+    restart: unless-stopped

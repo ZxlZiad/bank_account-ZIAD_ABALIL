@@ -1,0 +1,13 @@
+{
+  "/ACCOUNT-SERVICE/*": {
+    "target": "http://localhost:8888",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/CUSTOMER-SERVICE/*": {
+    "target": "http://localhost:8889",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
+
